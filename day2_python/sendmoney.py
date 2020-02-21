@@ -8,7 +8,13 @@ print("Send Kes {} to {} of {}?".format(amount,recepientName,recepientPhone))
 
 #User confirmation
 confirm = int(input("Press 1 to proceed: "))
-if (confirm==1):
+if (confirm == 1):
     balance = 3000
     newBalance = balance - amount
-    print("Confirmed Kes {} sent to {} {} New Balance is Kes {}".format(amount,recepientPhone,recepientName,newBalance))
+    print("Confirmed Kes {} sent to {} {}, New Balance is Kes {}".format(amount,recepientPhone,recepientName,newBalance))
+
+def func():
+    x=15
+    print(x)
+x=12
+func()
