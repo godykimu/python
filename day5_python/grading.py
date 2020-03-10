@@ -1,65 +1,49 @@
-#User Input
-print("#"*50)
+# A Program to Grade Students Marks
+print('#'*60)
+
 studentName = input("Enter Student Name: ")
-math = int(input("Enter marks for Maths: "))
-eng = int(input("Enter marks for English: "))
-kisw = int(input("Enter marks for Kiswahili: "))
+studentRegNo = input("Enter Student Registration Number: ")
+math = int(input("Enter Maths Marks: "))
+eng = int(input("Enter English Marks: "))
+swa = int(input("Enter Swahili Marks: "))
 
-def gradeMath(math):
-    if (math >= 80):
-        print("Maths Grade is A")
-    elif (math >= 60 and math < 80):
-        print("Maths Grade is B")
-    elif (math >= 40 and math < 60):
-        print("Maths Grade is C")
+print('#'*60)
+
+# Function to Grade Score
+def gradeMark(score):
+    if (score >= 70 and score <= 100):
+        return 'A'
+    elif (score >= 60 and score < 70):
+        return 'B'
+    elif  (score >= 50 and score < 60):
+        return 'C'
+    elif (score >= 40 and score < 50):
+        return 'D'
+    elif (score >= 0 and score < 40):
+        return 'E'
     else:
-        print("Maths Grade is D")
+        return 'Invalid Marks'
 
-gradeMath(math)
+# Display Grade per Subject
+print('Student Name: {}'.format(studentName))
+print('Student Reg No: {}'.format(studentRegNo))
+print('Maths Grade: {}'.format(gradeMark(math)))
+print('English Grade: {}'.format(gradeMark(eng)))
+print('Swahili Grade: {}'.format(gradeMark(swa)))
 
-def gradeEng(eng):
-    if (math >= 80):
-        print("English Grade is A")
-    elif (math >= 60 and math < 80):
-        print("English Grade is B")
-    elif (math >= 40 and math < 60):
-        print("English Grade is C")
-    else:
-        print("English Grade is D")
+# Function to Calculate total Marks
+def totalMarks(num1,num2,num3):
+    return num1 + num2 + num3
 
-gradeEng(eng)
+print('#'*60)
 
-def gradeKisw(kisw):
-    if (kisw >= 80):
-        print("Kiswahili Grade is A")
-    elif (kisw >= 60 and kisw < 80):
-        print("Kiswahili Grade is B")
-    elif (kisw >= 40 and kisw < 60):
-        print("Kiswahili Grade is C")
-    else:
-        print("Kiswahili Grade is D")
+print('Total Marks : {}'.format(totalMarks(math,eng,swa)))
 
-gradeKisw(kisw)
+# Function to Calculate Average of Three Numbers
+def average (avg):
+    return int(avg/3)
 
-def totalMarks(math,eng,kisw):
-    computedTotal = math + eng + kisw
-    return computedTotal
+print('Average Marks: {}'.format(average(totalMarks(math,eng,swa))))
+print('Average Grade: {}'.format(gradeMark(average(totalMarks(math,eng,swa)))))
 
-studentMarks = int(totalMarks(math,eng,kisw))
-print("Student Total Marks : {}".format(studentMarks))
-
-average = totalMarks(math,eng,kisw) / 3
-
-def gradeTotal(average):
-    if (average >= 80 ):
-        print("Average Grade is A")
-    elif (average >= 60 and average < 80):
-        print("Average Grade is B")
-    elif (average >= 40 and average < 60):
-        print("Average Grade is C")
-    else:
-        print("Average Grade is D")
-
-gradeTotal(average)
-
-print("#"*50)
+print('#'*60)
